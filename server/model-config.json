@@ -1,0 +1,67 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../node_modules/loopback-ds-timestamp-mixin",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mydb"
+  },
+  "AccessToken": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mydb",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mydb",
+    "public": false
+  },
+  "product": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "comment": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "purchase": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "rating": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "user": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "product_files": {
+    "dataSource": "storage",
+    "public": true
+  },
+  "product_category": {
+    "dataSource": "mydb",
+    "public": true
+  }
+}

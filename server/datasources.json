@@ -1,0 +1,20 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mydb": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "messenger_db",
+    "name": "mydb",
+    "connector": "mongodb"
+  },
+  "storage": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "messenger_db",
+    "name": "storage",
+    "connector": "loopback-component-storage-mongo-gridfs"
+  }
+}

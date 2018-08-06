@@ -1,0 +1,65 @@
+{
+  "name": "user",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "phone": {
+      "type": "number",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
+    },
+    "last_seen": {
+      "type": "date",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user_comment": {
+      "type": "hasOne",
+      "model": "comment",
+      "foreignKey": "user_id",
+      "primaryKey": "id"
+    },
+    "user_purchase": {
+      "type": "hasOne",
+      "model": "purchase",
+      "foreignKey": "user_id",
+      "primaryKey": "id"
+    },
+    "user_rating": {
+      "type": "hasOne",
+      "model": "rating",
+      "foreignKey": "user_id",
+      "primaryKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
