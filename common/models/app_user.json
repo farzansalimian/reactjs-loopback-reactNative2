@@ -1,5 +1,5 @@
 {
-  "name": "user",
+  "name": "app_user",
   "base": "User",
   "idInjection": true,
   "options": {
@@ -31,33 +31,23 @@
       "required": true,
       "default": "$now"
     },
-    "last_seen": {
-      "type": "date",
-      "required": true
+    "active": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     },
-    "address": {
-      "type": "string"
+    "staff": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "validations": [],
   "relations": {
-    "user_comment": {
-      "type": "hasOne",
-      "model": "comment",
-      "foreignKey": "user_id",
-      "primaryKey": "id"
-    },
-    "user_purchase": {
-      "type": "hasOne",
-      "model": "purchase",
-      "foreignKey": "user_id",
-      "primaryKey": "id"
-    },
-    "user_rating": {
-      "type": "hasOne",
-      "model": "rating",
-      "foreignKey": "user_id",
-      "primaryKey": "id"
+    "user_questionnaire_answer": {
+      "type": "hasMany",
+      "model": "questionnaire_answer",
+      "foreignKey": "user_id"
     }
   },
   "acls": [],

@@ -6,12 +6,18 @@ import { Delete } from 'admin-on-rest/lib/mui';
 import messages from '../messages';
 
 import { UserList, UserShow, UserCreate, UserEdit } from './crud/user';
-import {ProductList, ProductEdit, ProductCreate, ProductShow} from './crud/product'
-import {CommentList, CommentEdit, CommentCreate, CommentShow} from './crud/comment'
-import {CategoryList, CategoryEdit, CategoryCreate, CategoryShow} from './crud/category'
+import {NewsList, NewsEdit, NewsCreate, NewsShow} from './crud/news'
+import {AboutUsList, AboutUsEdit, AboutUsCreate, AboutUsShow} from './crud/about_us'
 
-import {PurchaseList, PurchaseEdit, PurchaseCreate, PurchaseShow} from './crud/purchase'
-import {RatingList, RatingEdit, RatingCreate, RatingShow} from './crud/rating'
+import {PhoneNumberList, PhoneNumberListEdit, PhoneNumberListCreate, PhoneNumberListShow} from './crud/phone_number_list'
+import {MotoList, MotoEdit, MotoCreate, MotoShow} from './crud/moto'
+import {IntroductionList, IntroductionEdit, IntroductionCreate, IntroductionShow} from './crud/introduction'
+import {GalleryList, GalleryEdit, GalleryCreate, GalleryShow} from './crud/gallery'
+import {DictionaryList, DictionaryEdit, DictionaryCreate, DictionaryShow} from './crud/dictionary'
+import {QuestionnaireList, QuestionnaireEdit, QuestionnaireCreate, QuestionnaireShow} from './crud/questionnaire'
+import {QuestionnaireAnswersList, QuestionnaireAnswersEdit, QuestionnaireAnswersCreate, QuestionnaireAnswersShow} from './crud/questionnaire_answers'
+
+import {EmployeeList, EmployeeEdit, EmployeeCreate, EmployeeShow} from './crud/employee'
 // auto gen crud, please don't remove this comment
 
 
@@ -23,14 +29,19 @@ class App extends Component {
         title='مدیریت پایگاه داده'
         messages={messages}
         logoutUrl="/logout"
-        authClient={authClient('http://localhost:3000/api/users/login')}
+        authClient={authClient('http://localhost:3000/api/Users/login')}
       >
-        <Resource name='users' remove={Delete} list={UserList} edit={UserEdit} create={UserCreate} show={UserShow}  />
-        <Resource name='products' remove={Delete} list={ProductList} edit={ProductEdit} create={ProductCreate} show={ProductShow}/>
-        <Resource name='comments' remove={Delete} list={CommentList} edit={CommentEdit} create={CommentCreate} show={CommentShow}/>
-        <Resource name='purchases' remove={Delete} list={PurchaseList} edit={PurchaseEdit} create={PurchaseCreate} show={PurchaseShow}/>
-        <Resource name='ratings' remove={Delete} list={RatingList} edit={RatingEdit} create={RatingCreate} show={RatingShow}/>
-        <Resource name='product_categories' remove={Delete} list={CategoryList} edit={CategoryEdit} create={CategoryCreate} show={CategoryShow}/>
+        <Resource name='app_users' remove={Delete} list={UserList} edit={UserEdit} create={UserCreate} show={UserShow}  />
+        <Resource name='news' remove={Delete} list={NewsList} edit={NewsEdit} create={NewsCreate} show={NewsShow}/>
+        <Resource name='about_us' remove={Delete} list={AboutUsList} edit={AboutUsEdit} create={AboutUsCreate} show={AboutUsShow}/>
+        <Resource name='phone_number_lists' remove={Delete} list={PhoneNumberList} edit={PhoneNumberListEdit} create={PhoneNumberListCreate} show={PhoneNumberListShow}/>
+        <Resource name='galleries' remove={Delete} list={GalleryList} edit={GalleryEdit} create={GalleryCreate} show={GalleryShow}/>
+        <Resource name='introductions' remove={Delete} list={IntroductionList} edit={IntroductionEdit} create={IntroductionCreate} show={IntroductionShow}/>
+        <Resource name='employees' remove={Delete} list={EmployeeList} edit={EmployeeEdit} create={EmployeeCreate} show={EmployeeShow}/>
+        <Resource name='motos' remove={Delete} list={MotoList} edit={MotoEdit} create={MotoCreate} show={MotoShow}/>
+        <Resource name='dictionaries' remove={Delete} list={DictionaryList} edit={DictionaryEdit} create={DictionaryCreate} show={DictionaryShow}/>
+        <Resource name='questionnaires' remove={Delete} list={QuestionnaireList} edit={QuestionnaireEdit} create={QuestionnaireCreate} show={QuestionnaireShow}/>
+        <Resource name='questionnaire_answers' remove={Delete} list={QuestionnaireAnswersList} edit={QuestionnaireAnswersEdit} create={QuestionnaireAnswersCreate} show={QuestionnaireAnswersShow}/>
 
       </Admin>
     );

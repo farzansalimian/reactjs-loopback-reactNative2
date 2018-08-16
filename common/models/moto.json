@@ -1,5 +1,5 @@
 {
-  "name": "rating",
+  "name": "moto",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,17 +10,14 @@
       "type": "number",
       "required": true
     },
-    "user_id": {
-      "type": "number",
+    "text": {
+      "type": "string",
       "required": true
     },
-    "product_id": {
-      "type": "number",
-      "required": true
-    },
-    "value": {
-      "type": "number",
-      "required": true
+    "created_date": {
+      "type": "date",
+      "required": true,
+      "default": "$now"
     }
   },
   "validations": [],

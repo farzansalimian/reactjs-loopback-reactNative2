@@ -1,5 +1,5 @@
 {
-  "name": "product_category",
+  "name": "news_category",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -17,11 +17,10 @@
   },
   "validations": [],
   "relations": {
-    "product_category": {
+    "news_category": {
       "type": "hasMany",
-      "model": "product",
-      "foreignKey": "category",
-      "primaryKey": "name"
+      "model": "news",
+      "foreignKey": "category_id"
     }
   },
   "acls": [],

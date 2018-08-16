@@ -1,0 +1,40 @@
+{
+  "name": "dictionary",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "word_fa": {
+      "type": "string",
+      "required": true
+    },
+    "word_en": {
+      "type": "string",
+      "required": true
+    },
+    "description_fa": {
+      "type": "string",
+      "required": false
+    },
+    "description_en": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

@@ -3,8 +3,7 @@ import { Responsive } from 'admin-on-rest/lib/mui/layout';
 import {
     List, Filter, Create, SimpleForm,
     required, EditButton, DeleteButton,
-    Edit, TabbedForm, FormTab, ReferenceField,
-    DisabledInput, ReferenceInput, SelectInput,
+    Edit, TabbedForm, FormTab
 } from 'admin-on-rest/lib';
 import { TextInput } from 'admin-on-rest/lib/mui/input';
 import { Datagrid, SimpleList } from 'admin-on-rest/lib/mui/list';
@@ -12,18 +11,20 @@ import { TextField } from 'admin-on-rest/lib/mui/field';
 import { Show, SimpleShowLayout } from 'admin-on-rest/lib/mui/detail';
 import PropTypes from 'prop-types';
 
-const CategoryFilter = props => (
+const PhoneNumberListFilter = props => (
     <Filter {...props} >
         <TextInput label='Search' source='q' alwaysOn />
     </Filter>
 );
 
-export const CategoryList = props => (
-    <List {...props} filters={<CategoryFilter />}>
+export const PhoneNumberList = props => (
+    <List {...props} filters={<PhoneNumberListFilter />}>
         <Responsive
             medium={
                 <Datagrid>
-                    <TextField source="name" />
+                    <TextField source="first_name" />
+                    <TextField source="last_name" />
+                    <TextField source="phone_number" />
                     <EditButton />
                     <DeleteButton />
                 </Datagrid>
@@ -37,34 +38,40 @@ export const CategoryList = props => (
     </List>
 );
 
-const CategoryTitle = ({ record }) => <span>{record ? `${record.name}` : ''}</span>;
+const PhoneNumberListTitle = ({ record }) => <span>{record ? `${record.name}` : ''}</span>;
 
-CategoryTitle.propTypes = {
+PhoneNumberListTitle.propTypes = {
     record: PropTypes.object,
 };
 
-export const CategoryEdit = props => (
-    <Edit title={<CategoryTitle />} {...props}>
+export const PhoneNumberListEdit = props => (
+    <Edit title={<PhoneNumberListTitle />} {...props}>
         <TabbedForm>
             <FormTab label='generic.general'>
-                <TextInput source="name" />
+                <TextInput source="first_name" validate={[ required ]} />
+                <TextInput source="last_name" validate={[ required ]}/>
+                <TextInput source="phone_number" validate={[ required ]}/>
             </FormTab>
         </TabbedForm>
     </Edit>
 );
 
-export const CategoryCreate = props => (
+export const PhoneNumberListCreate = props => (
     <Create {...props}>
         <SimpleForm>
-            <TextInput source="name" />
+            <TextInput source="first_name" validate={[ required ]}/>
+            <TextInput source="last_name" validate={[ required ]}/>
+            <TextInput source="phone_number" validate={[ required ]}/>
         </SimpleForm>
     </Create>
 );
 
-export const CategoryShow = props => (
+export const PhoneNumberListShow = props => (
     <Show {...props}>
         <SimpleShowLayout>
-            <TextField source="name" />
+            <TextField source="first_name" />
+            <TextField source="last_name" />
+            <TextField source="phone_number" />
         </SimpleShowLayout>
     </Show>
 );  

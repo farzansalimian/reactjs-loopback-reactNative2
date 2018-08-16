@@ -14,9 +14,6 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "mydb"
-  },
   "AccessToken": {
     "dataSource": "mydb",
     "public": false
@@ -36,31 +33,55 @@
     "dataSource": "mydb",
     "public": false
   },
-  "product": {
+  "news": {
     "dataSource": "mydb",
     "public": true
   },
-  "comment": {
+  "about_us": {
     "dataSource": "mydb",
     "public": true
   },
-  "purchase": {
+  "dictionary": {
     "dataSource": "mydb",
     "public": true
   },
-  "rating": {
+  "moto": {
     "dataSource": "mydb",
     "public": true
   },
-  "user": {
+  "User": {
     "dataSource": "mydb",
     "public": true
   },
-  "product_files": {
+  "app_user": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "files": {
     "dataSource": "storage",
     "public": true
   },
-  "product_category": {
+  "phone_number_list": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "questionnaire": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "questionnaire_answer": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "gallery": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "introduction": {
+    "dataSource": "mydb",
+    "public": true
+  },
+  "employee": {
     "dataSource": "mydb",
     "public": true
   }

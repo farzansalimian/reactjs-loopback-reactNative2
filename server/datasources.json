@@ -6,14 +6,14 @@
   "mydb": {
     "host": "localhost",
     "port": 27017,
-    "database": "messenger_db",
+    "database": "news",
     "name": "mydb",
     "connector": "mongodb"
   },
   "storage": {
     "host": "localhost",
     "port": 27017,
-    "database": "messenger_db",
+    "database": "news",
     "name": "storage",
     "connector": "loopback-component-storage-mongo-gridfs"
   }

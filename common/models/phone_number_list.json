@@ -1,5 +1,5 @@
 {
-  "name": "comment",
+  "name": "phone_number_list",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -10,16 +10,16 @@
       "type": "number",
       "required": true
     },
-    "user_id": {
-      "type": "number",
-      "required": true
-    },
-    "product_id": {
-      "type": "number",
-      "required": true
-    },
-    "message": {
+    "first_name": {
       "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "phone_number": {
+      "type": "number",
       "required": true
     }
   },

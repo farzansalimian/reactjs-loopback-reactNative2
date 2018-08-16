@@ -1,5 +1,5 @@
 {
-  "name": "purchase",
+  "name": "employee",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -7,35 +7,32 @@
   },
   "properties": {
     "id": {
-      "type": "number"
-    },
-    "user_id": {
       "type": "number",
       "required": true
     },
-    "product_id": {
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
       "type": "number",
       "required": true
     },
-    "number_of_items": {
-      "type": "number",
-      "required": true,
-      "default": 1
-    },
-    "total_price": {
+    "staff_code": {
       "type": "number",
       "required": true
     }
   },
   "validations": [],
   "relations": {},
-  "acls": [
-    {
-      "accessType": "*",
-      "principalType": "ROLE",
-      "principalId": "$everyone",
-      "permission": "DENY"
-    }
-  ],
+  "acls": [],
   "methods": {}
 }

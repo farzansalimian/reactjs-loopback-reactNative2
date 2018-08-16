@@ -2,11 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {
   List, Show, Edit, Create, Filter, Datagrid,
-  SimpleShowLayout, SimpleForm, TabbedForm, FormTab, LatLngField,
-  ReferenceField, DateField, NumberField, TextField, ChipField, BooleanField,
-  NumberInput, DateInput, DisabledInput, LongTextInput, SelectInput, SelectArrayInput, ReferenceInput,
-  TextInput, BooleanInput, AutocompleteInput, EditButton,DeleteButton,
-  required, minLength, maxLength, minValue, maxValue, number, regex, choices,
+  SimpleShowLayout, SimpleForm, TabbedForm, FormTab,
+   DateField, TextField, BooleanField, DisabledInput,
+  TextInput, BooleanInput , EditButton,DeleteButton,
+  required
 } from 'admin-on-rest';
 import { Responsive } from 'admin-on-rest/lib/mui/layout';
 import { SimpleList } from 'admin-on-rest/lib/mui/list';
@@ -14,7 +13,11 @@ import { SimpleList } from 'admin-on-rest/lib/mui/list';
 const UserFilter = props => (
   <Filter {...props}>
     <TextInput label='Search' source='q' alwaysOn />
-    <TextInput label="username" source="username" />
+    <TextInput label="phone" source="phone" />
+    <TextInput label="email" source="email" />
+    <TextInput label="first_name" source="first_name" />
+    <TextInput label="last_name" source="last_name" />
+    <TextInput label="id" source="id" />
   </Filter>
 );
 
@@ -25,8 +28,7 @@ export const UserList = props => (
     <Datagrid>
       <TextField source='id' />
       <TextField source='first_name' />
-      <DateField source='last_name'  />
-      <TextField source='username' />
+      <TextField source='last_name'  />
       <TextField source='email' />
       <TextField source='phone' />
       <EditButton/>
@@ -35,16 +37,16 @@ export const UserList = props => (
     }
     small={
       <SimpleList
-      primaryText={record => record.username}
+      primaryText={record => record.phone}
       secondaryText={record => record.email}
-      tertiaryText={record =>record.first_name+" "+record.first_name }
+      tertiaryText={record =>record.first_name+" "+record.last_name }
   />
     }
     />
   </List>
 );
 
-const UserTitle = ({ record }) => <span>{record ? `${record.username}` : ''}</span>;
+const UserTitle = ({ record }) => <span>{record ? `${record.phone}` : ''}</span>;
 
 UserTitle.propTypes = {
   record: PropTypes.object,
@@ -55,11 +57,11 @@ export const UserShow = props => (
     <SimpleShowLayout>
       <TextField source='id' />
       <TextField source='first_name' />
-      <DateField source='last_name'  />
-      <TextField source='username' />
+      <TextField source='last_name'  />
+      <DateField source='created_at' />
       <TextField source='email' />
-      <TextField source='address' />
       <TextField source='phone' />
+      <BooleanField source='active' />
     </SimpleShowLayout>
   </Show>
 );
@@ -71,67 +73,26 @@ export const UserEdit = props => (
         <DisabledInput source='id' />
         <TextInput source='first_name' validate={[ required ]} />
         <TextInput source='last_name' validate={[ required ]} />
-        <TextInput source='username' />
         <TextInput source='email' validate={[ required ]} />
-        <TextInput source='address' />
-        <TextInput source='phone' />
+        <DateField source='created_at' />
+        <TextInput source='phone' validate={[ required ]}/>
+        <BooleanInput source='active' />
       </FormTab>
     </TabbedForm>
   </Edit>
 );
 
-export const UserEditPopup = props => (
-  <EditPopup resource='users' title={<UserTitle />} {...props}>
-    <TabbedForm>
-      <FormTab label='generic.general'>
-        <DisabledInput source='id' />
-        <TextInput source='first_name' validate={[ required ]} />
-        <TextInput source='username' />
-        <TextInput source='password' validate={[ required ]} />
-        <TextInput source='email' validate={[ required ]} />
-        <TextInput source='address1' />
-        <TextInput source='address2' />
-        <TextInput source='phone' />
-        <TextInput source='phone2' />
-      </FormTab>
-      <FormTab label='generic.metadata'>
-        <DateField source='last_name' showTime />
-        <ReferenceField allowEmpty source='updaterId' reference='users'>
-          <TextField source='email' />
-        </ReferenceField>
-        <DateField source='createdDate' showTime />
-        <ReferenceField allowEmpty source='creatorId' reference='users'>
-          <TextField source='email' />
-        </ReferenceField>
-      </FormTab>
-    </TabbedForm>
-  </EditPopup>
-);
 
 export const UserCreate = props => (
   <Create {...props}>
     <SimpleForm>
       <TextInput source='first_name' validate={[ required ]} />
-      <TextInput source='username' />
+      <TextInput source='last_name' validate={[ required ]}/>
       <TextInput source='password' validate={[ required ]} />
       <TextInput source='email' validate={[ required ]} />
-      <TextInput source='address' />
-      <TextInput source='phone' />
+      <TextInput source='phone' validate={[ required ]}/>
+      <BooleanInput source='active' />
     </SimpleForm>
   </Create>
 );
 
-export const UserCreatePopup = props => (
-  <CreatePopup resource='users' {...props}>
-    <SimpleForm>
-      <TextInput source='first_name' validate={[ required ]} />
-      <TextInput source='username' />
-      <TextInput source='password' validate={[ required ]} />
-      <TextInput source='email' validate={[ required ]} />
-      <TextInput source='address1' />
-      <TextInput source='address2' />
-      <TextInput source='phone' />
-      <TextInput source='phone2' />
-    </SimpleForm>
-  </CreatePopup>
-);

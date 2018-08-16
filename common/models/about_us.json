@@ -1,0 +1,49 @@
+{
+  "name": "about_us",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "introduction": {
+      "type": "string",
+      "required": true
+    },
+    "mannegersSpeach": {
+      "type": "string",
+      "required": true
+    },
+    "CodeOfConduct": {
+      "type": "string",
+      "required": true
+    },
+    "viewPoint": {
+      "type": "string",
+      "required": true
+    },
+    "contactUs": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

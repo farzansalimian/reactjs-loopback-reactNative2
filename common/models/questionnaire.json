@@ -1,0 +1,102 @@
+{
+  "name": "questionnaire",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "question1": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives1": {
+      "type": "object",
+      "required": true
+    },
+    "question2": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives2": {
+      "type": "object",
+      "required": true
+    },
+    "question3": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives3": {
+      "type": "object",
+      "required": true
+    },
+    "question4": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives4": {
+      "type": "object",
+      "required": true
+    },
+    "question5": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives5": {
+      "type": "object",
+      "required": true
+    },
+    "question6": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives6": {
+      "type": "object",
+      "required": true
+    },
+    "question7": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives7": {
+      "type": "object",
+      "required": true
+    },
+    "question8": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives8": {
+      "type": "object",
+      "required": true
+    },
+    "question9": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives9": {
+      "type": "object",
+      "required": true
+    },
+    "question10": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives10": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
